@@ -8,6 +8,10 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: REMOTION_CONCURRENCY
+        value: 1
+      - key: REMOTION_BROWSER_EXECUTABLE
+        value: /usr/bin/chromium-browser
       - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
         value: true
       - key: CHROMIUM_PATH
