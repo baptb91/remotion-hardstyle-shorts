@@ -74,9 +74,10 @@ app.post('/generate-video', upload.single('audio'), async (req, res) => {
 
   } catch (error) {
     console.error('Erreur génération vidéo:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Erreur lors de la génération';
     res.status(500).json({
       success: false,
-      error: error.message || 'Erreur lors de la génération'
+      error: errorMessage
     });
   }
 });
