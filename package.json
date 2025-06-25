@@ -2,15 +2,16 @@
   "name": "remotion-hardstyle-shorts",
   "version": "1.0.0",
   "description": "Générateur d'effets visuels hardstyle pour YouTube Shorts",
-  "main": "src/index.ts",
+  "main": "dist/server/api.js",
   "scripts": {
     "start": "remotion studio",
-    "build": "remotion build",
+    "build": "tsc && remotion build",
     "render": "remotion render MainComposition out/video.mp4",
     "server": "tsx src/server/api.ts",
     "dev": "concurrently \"npm run server\" \"npm run start\"",
     "preview": "remotion preview",
-    "deploy": "npm run build"
+    "compile": "tsc",
+    "postinstall": "npm run compile"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
